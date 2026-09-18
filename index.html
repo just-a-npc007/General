@@ -8,6 +8,31 @@
     <title>Common Diseases in Rural Areas</title>
 
     <style>
+        .search-container {
+    width: 95%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#searchInput {
+    width: 60%;
+    max-width: 500px;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    outline: none;
+}
+
+#searchInput::placeholder {
+    color: #ccc;
+}
+
+#searchInput:focus {
+    border-color: #00ffff;
+}
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -76,6 +101,7 @@
             padding: 20px;
         }
     </style>
+    
 </head>
 
 <body>
@@ -99,7 +125,14 @@
         self-prescribed. Consult a qualified healthcare professional,
         especially for children, pregnant people, elderly people, or severe symptoms.
     </div>
-
+    <div class="search-container">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a disease..."
+        onkeyup="searchDisease()"
+    >
+    </div>
     <table>
 
         <tr>
@@ -352,7 +385,22 @@
     <div class="footer">
         <p><b>Educational Project | Binary Decoders</b></p>
     </div>
+<script>
+function searchDisease() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let rows = document.querySelectorAll("table tr");
 
+    for (let i = 1; i < rows.length; i++) {
+        let disease = rows[i].cells[1].textContent.toLowerCase();
+
+        if (disease.includes(input)) {
+            rows[i].style.display = "";
+        } else {
+            rows[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 
 </html>
