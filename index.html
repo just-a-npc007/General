@@ -8,6 +8,86 @@
     <title>Common Diseases in Rural Areas</title>
 
     <style>
+        #loginPage {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.login-box {
+    width: 350px;
+    padding: 30px;
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid white;
+    border-radius: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-box h1 {
+    font-size: 25px;
+}
+
+.login-box p {
+    color: #ccc;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 7px;
+    background: #222;
+    color: white;
+    outline: none;
+}
+
+.role-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.role-buttons button {
+    flex: 1;
+    padding: 11px;
+    border: 1px solid white;
+    border-radius: 7px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+.role-buttons button.selected {
+    background: #00ffff;
+    color: black;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 7px;
+    background: #00ffff;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: white;
+}
+
+#loginMessage {
+    margin-top: 15px;
+}
         .search-container {
     width: 95%;
     margin: 20px auto;
