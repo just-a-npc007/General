@@ -105,6 +105,36 @@
 </head>
 
 <body>
+    <div id="loginPage">
+
+    <div class="login-box">
+
+        <h1>🩺 Rural Health Portal</h1>
+        <p>Login to continue</p>
+
+        <div class="role-buttons">
+            <button onclick="selectRole('patient')" id="patientBtn">
+                Patient
+            </button>
+
+            <button onclick="selectRole('doctor')" id="doctorBtn">
+                Doctor
+            </button>
+        </div>
+
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button class="login-button" onclick="login()">
+            Login
+        </button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+    </div>
 
     <div class="center">
 
