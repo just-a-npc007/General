@@ -613,6 +613,76 @@ function searchDisease() {
     </div>
 
 </div>
+    <script>
+
+let selectedRole = "";
+
+function selectRole(role) {
+
+    selectedRole = role;
+
+    document.getElementById("patientBtn")
+        .classList.remove("selected");
+
+    document.getElementById("doctorBtn")
+        .classList.remove("selected");
+
+    if (role === "patient") {
+        document.getElementById("patientBtn")
+            .classList.add("selected");
+    }
+
+    if (role === "doctor") {
+        document.getElementById("doctorBtn")
+            .classList.add("selected");
+    }
+}
+
+function login() {
+
+    let username =
+        document.getElementById("username").value;
+
+    let password =
+        document.getElementById("password").value;
+
+    let message =
+        document.getElementById("loginMessage");
+
+    if (selectedRole === "") {
+        message.textContent = "Please select Patient or Doctor.";
+        return;
+    }
+
+    if (username === "" || password === "") {
+        message.textContent = "Please enter username and password.";
+        return;
+    }
+
+    /*
+       Demo login only.
+       This is NOT secure authentication.
+    */
+
+    if (selectedRole === "patient") {
+
+        document.getElementById("loginPage").style.display = "none";
+
+        alert("Welcome Patient!");
+
+    }
+
+    else if (selectedRole === "doctor") {
+
+        document.getElementById("loginPage").style.display = "none";
+
+        alert("Welcome Doctor!");
+
+    }
+}
+
+    </script>
+    
 </body>
 
 </html>
