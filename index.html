@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -893,4 +894,65 @@ function sendMessage() {
 
     else if (question.includes("conjunctivitis") || question.includes("eye")) {
 
-        reply = "Conjunctivitis can cause red eyes, watering, irritation and
+        reply = "Conjunctivitis can cause red eyes, watering, irritation and discharge.";
+
+    }
+
+    else if (question.includes("anaemia") || question.includes("anemia")) {
+
+        reply = "Anaemia can cause tiredness, weakness, dizziness and shortness of breath.";
+
+    }
+
+    else if (
+        question.includes("hello") ||
+        question.includes("hi")
+    ) {
+
+        reply = "Hello! 👋 Ask me about any disease listed on this webpage.";
+
+    }
+
+    else if (question.includes("symptom")) {
+
+        reply = "You can ask about symptoms of Common Cold, Diarrhoea, Malaria, Dengue, Typhoid, Respiratory Infection, Skin Infection, Worm Infection, Conjunctivitis or Anaemia.";
+
+    }
+
+    else {
+
+        reply = "I can provide basic information about the diseases listed on this webpage. Try asking about malaria, dengue, typhoid or symptoms.";
+
+    }
+
+
+    /* BOT MESSAGE */
+
+    let botMessage = document.createElement("div");
+
+    botMessage.className = "message bot";
+
+    botMessage.textContent = reply;
+
+    chatMessages.appendChild(botMessage);
+
+
+    /* CLEAR INPUT */
+
+    input.value = "";
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+/* ENTER KEY */
+
+document.getElementById("chatInput").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+
+});
+
+</script>
